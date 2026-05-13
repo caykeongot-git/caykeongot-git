@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300" width="900" height="300">
+  <defs>
+    <style>
+      .bg{fill:#0d1117}
+      .mask-face{fill:#c9d1d9;stroke:#c9d1d9;stroke-width:0;opacity:0;animation:m 14s ease infinite}
+      .mask-eye{fill:#0d1117}
+      .mask-brow{fill:none;stroke:#0d1117;stroke-width:2.5;opacity:0;animation:m 14s ease infinite}
+      .mask-detail{fill:none;stroke:#0d1117;stroke-width:2;opacity:0;animation:m 14s ease infinite}
+      .mask-cheek{fill:#e94560;opacity:0;animation:ch 14s ease infinite}
+      .tag{fill:#e94560;font-family:'Segoe UI',system-ui,sans-serif;font-size:16px;font-weight:600;letter-spacing:8px;opacity:0;text-anchor:middle;animation:tag 14s ease infinite}
+      .name{fill:#e94560;font-family:'Segoe UI',system-ui,sans-serif;font-size:44px;font-weight:700;letter-spacing:6px;opacity:0;text-anchor:middle;animation:nm 14s ease infinite}
+      .sub{fill:#8b949e;font-family:'Segoe UI',system-ui,sans-serif;font-size:12px;font-weight:400;letter-spacing:4px;opacity:0;text-anchor:middle;animation:sub 14s ease infinite}
+      .divider{stroke:#e94560;stroke-width:1;opacity:0;animation:sub 14s ease infinite}
+      .glow{fill:none;stroke:#e94560;stroke-width:1;opacity:0;animation:gl 14s ease infinite}
+
+      @keyframes m{0%,3%{opacity:0}8%{opacity:1}32%{opacity:1}38%{opacity:0}100%{opacity:0}}
+      @keyframes ch{0%,3%{opacity:0}8%{opacity:.2}32%{opacity:.2}38%{opacity:0}100%{opacity:0}}
+      @keyframes tag{0%,14%{opacity:0}20%{opacity:1}32%{opacity:1}38%{opacity:0}100%{opacity:0}}
+      @keyframes nm{0%,44%{opacity:0;letter-spacing:20px}54%{opacity:1;letter-spacing:6px}82%{opacity:1}90%{opacity:0}100%{opacity:0}}
+      @keyframes sub{0%,56%{opacity:0}64%{opacity:1}82%{opacity:1}90%{opacity:0}100%{opacity:0}}
+      @keyframes gl{0%,5%{opacity:0;stroke-width:3}10%{opacity:.4;stroke-width:1}32%{opacity:.15}38%{opacity:0}100%{opacity:0}}
+    </style>
+  </defs>
+
+  <rect class="bg" width="900" height="300" rx="16"/>
+
+  <!-- Glow ring behind mask -->
+  <circle class="glow" cx="450" cy="100" r="65"/>
+
+  <!-- Anonymous Mask -->
+  <g transform="translate(415,35) scale(1.15)">
+    <!-- Face shape -->
+    <path class="mask-face" d="M35 0C58 0 70 14 70 34C70 54 56 70 35 80C14 70 0 54 0 34C0 14 12 0 35 0Z"/>
+    <!-- Left eye -->
+    <path class="mask-eye" d="M12 30L22 24L31 30L22 36Z"/>
+    <!-- Right eye -->
+    <path class="mask-eye" d="M39 30L48 24L58 30L48 36Z"/>
+    <!-- Eyebrows -->
+    <path class="mask-brow" d="M10 22Q22 13 33 22"/>
+    <path class="mask-brow" d="M37 22Q48 13 60 22"/>
+    <!-- Nose -->
+    <path class="mask-detail" d="M35 38L31 48L39 48Z"/>
+    <!-- Mustache -->
+    <path class="mask-detail" d="M13 55Q24 47 35 55Q46 47 57 55" stroke-width="2.5"/>
+    <!-- Smile -->
+    <path class="mask-detail" d="M22 60Q35 69 48 60"/>
+    <!-- Cheeks -->
+    <circle class="mask-cheek" cx="13" cy="44" r="5"/>
+    <circle class="mask-cheek" cx="57" cy="44" r="5"/>
+  </g>
+
+  <!-- Phase 1 tagline -->
+  <text class="tag" x="450" y="200">BREAK · BUILD · AUDIT</text>
+
+  <!-- Phase 2: Name -->
+  <text class="name" x="450" y="145">NGUYEN DINH AN NINH</text>
+  <line class="divider" x1="270" y1="165" x2="630" y2="165"/>
+  <text class="sub" x="450" y="190">OFFENSIVE SECURITY · BLOCKCHAIN AUDITING · AI ENGINEERING</text>
+</svg>
