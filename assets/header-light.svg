@@ -2,46 +2,74 @@
   <defs>
     <style>
       .bg{fill:#ffffff}
-      .mask-face{fill:#1f2328;stroke:#1f2328;stroke-width:0;opacity:0;animation:m 14s ease infinite}
-      .mask-eye{fill:#ffffff}
-      .mask-brow{fill:none;stroke:#ffffff;stroke-width:2.5;opacity:0;animation:m 14s ease infinite}
-      .mask-detail{fill:none;stroke:#ffffff;stroke-width:2;opacity:0;animation:m 14s ease infinite}
-      .mask-cheek{fill:#e94560;opacity:0;animation:ch 14s ease infinite}
-      .tag{fill:#e94560;font-family:'Segoe UI',system-ui,sans-serif;font-size:16px;font-weight:600;letter-spacing:8px;opacity:0;text-anchor:middle;animation:tag 14s ease infinite}
-      .name{fill:#e94560;font-family:'Segoe UI',system-ui,sans-serif;font-size:44px;font-weight:700;letter-spacing:6px;opacity:0;text-anchor:middle;animation:nm 14s ease infinite}
-      .sub{fill:#57606a;font-family:'Segoe UI',system-ui,sans-serif;font-size:12px;font-weight:400;letter-spacing:4px;opacity:0;text-anchor:middle;animation:sub 14s ease infinite}
-      .divider{stroke:#e94560;stroke-width:1;opacity:0;animation:sub 14s ease infinite}
-      .glow{fill:none;stroke:#e94560;stroke-width:1;opacity:0;animation:gl 14s ease infinite}
-
+      .p1{opacity:0;animation:m 14s ease infinite}
+      .mf{fill:#1f2328}
+      .mc{fill:#ffffff}
+      .ml{fill:none;stroke:#ffffff;stroke-width:2.5}
+      .scar{fill:none;stroke:#e94560;stroke-width:1.5;stroke-dasharray:3 2}
+      .rf{fill:#e94560}
+      .tag{fill:#e94560;font-family:'Segoe UI',system-ui,sans-serif;font-size:16px;font-weight:600;letter-spacing:8px;opacity:0;text-anchor:middle;animation:tg 14s ease infinite}
+      .nm{fill:#e94560;font-family:'Segoe UI',system-ui,sans-serif;font-size:44px;font-weight:700;letter-spacing:6px;opacity:0;text-anchor:middle;animation:n 14s ease infinite}
+      .sb{fill:#57606a;font-family:'Segoe UI',system-ui,sans-serif;font-size:12px;font-weight:400;letter-spacing:4px;opacity:0;text-anchor:middle;animation:s 14s ease infinite}
+      .dv{stroke:#e94560;stroke-width:1;opacity:0;animation:s 14s ease infinite}
       @keyframes m{0%,3%{opacity:0}8%{opacity:1}32%{opacity:1}38%{opacity:0}100%{opacity:0}}
-      @keyframes ch{0%,3%{opacity:0}8%{opacity:.2}32%{opacity:.2}38%{opacity:0}100%{opacity:0}}
-      @keyframes tag{0%,14%{opacity:0}20%{opacity:1}32%{opacity:1}38%{opacity:0}100%{opacity:0}}
-      @keyframes nm{0%,44%{opacity:0;letter-spacing:20px}54%{opacity:1;letter-spacing:6px}82%{opacity:1}90%{opacity:0}100%{opacity:0}}
-      @keyframes sub{0%,56%{opacity:0}64%{opacity:1}82%{opacity:1}90%{opacity:0}100%{opacity:0}}
-      @keyframes gl{0%,5%{opacity:0;stroke-width:3}10%{opacity:.3;stroke-width:1}32%{opacity:.1}38%{opacity:0}100%{opacity:0}}
+      @keyframes tg{0%,14%{opacity:0}20%{opacity:1}32%{opacity:1}38%{opacity:0}100%{opacity:0}}
+      @keyframes n{0%,44%{opacity:0;letter-spacing:20px}54%{opacity:1;letter-spacing:6px}82%{opacity:1}90%{opacity:0}100%{opacity:0}}
+      @keyframes s{0%,56%{opacity:0}64%{opacity:1}82%{opacity:1}90%{opacity:0}100%{opacity:0}}
     </style>
   </defs>
 
   <rect class="bg" width="900" height="300" rx="16"/>
 
-  <circle class="glow" cx="450" cy="100" r="65"/>
+  <g class="p1">
+    <g>
+      <circle cx="450" cy="95" r="72" fill="none" stroke="#e94560" stroke-width="1" opacity="0.3"/>
+      <path class="rf" d="M450,23 C458,32 460,52 454,64 C450,54 446,38 450,23Z"/>
+      <path class="rf" d="M450,23 C458,32 460,52 454,64 C450,54 446,38 450,23Z" transform="rotate(120 450 95)"/>
+      <path class="rf" d="M450,23 C458,32 460,52 454,64 C450,54 446,38 450,23Z" transform="rotate(240 450 95)"/>
+      <animateTransform attributeName="transform" type="rotate" from="0 450 95" to="360 450 95" dur="8s" repeatCount="indefinite"/>
+    </g>
+  </g>
 
-  <g transform="translate(415,35) scale(1.15)">
-    <path class="mask-face" d="M35 0C58 0 70 14 70 34C70 54 56 70 35 80C14 70 0 54 0 34C0 14 12 0 35 0Z"/>
-    <path class="mask-eye" d="M12 30L22 24L31 30L22 36Z"/>
-    <path class="mask-eye" d="M39 30L48 24L58 30L48 36Z"/>
-    <path class="mask-brow" d="M10 22Q22 13 33 22"/>
-    <path class="mask-brow" d="M37 22Q48 13 60 22"/>
-    <path class="mask-detail" d="M35 38L31 48L39 48Z"/>
-    <path class="mask-detail" d="M13 55Q24 47 35 55Q46 47 57 55" stroke-width="2.5"/>
-    <path class="mask-detail" d="M22 60Q35 69 48 60"/>
-    <circle class="mask-cheek" cx="13" cy="44" r="5"/>
-    <circle class="mask-cheek" cx="57" cy="44" r="5"/>
+  <g class="p1">
+    <g>
+      <circle cx="450" cy="95" r="55" fill="none" stroke="#e94560" stroke-width="1" opacity="0.2"/>
+      <circle cx="450" cy="40" r="5" fill="#e94560"/>
+      <path class="rf" d="M455,42 C462,52 458,64 452,58 C455,52 456,46 455,42Z"/>
+      <g transform="rotate(120 450 95)">
+        <circle cx="450" cy="40" r="5" fill="#e94560"/>
+        <path class="rf" d="M455,42 C462,52 458,64 452,58 C455,52 456,46 455,42Z"/>
+      </g>
+      <g transform="rotate(240 450 95)">
+        <circle cx="450" cy="40" r="5" fill="#e94560"/>
+        <path class="rf" d="M455,42 C462,52 458,64 452,58 C455,52 456,46 455,42Z"/>
+      </g>
+      <animateTransform attributeName="transform" type="rotate" from="360 450 95" to="0 450 95" dur="6s" repeatCount="indefinite"/>
+    </g>
+  </g>
+
+  <g class="p1">
+    <g>
+      <circle cx="450" cy="95" r="42" fill="none" stroke="#e94560" stroke-width="1.5" opacity="0.5"/>
+      <circle cx="450" cy="53" r="3" fill="#e94560"/>
+      <circle cx="450" cy="53" r="3" fill="#e94560" transform="rotate(120 450 95)"/>
+      <circle cx="450" cy="53" r="3" fill="#e94560" transform="rotate(240 450 95)"/>
+      <animateTransform attributeName="transform" type="rotate" from="0 450 95" to="360 450 95" dur="4s" repeatCount="indefinite"/>
+    </g>
+  </g>
+
+  <g class="p1" transform="translate(450,95)">
+    <path class="mf" d="M0,-38 C22,-38 34,-26 34,-8 C34,14 20,30 0,40 C-20,30 -34,14 -34,-8 C-34,-26 -22,-38 0,-38Z"/>
+    <path class="mc" d="M-19,-5 L-12,-13 L-5,-5 L-12,2Z"/>
+    <path class="mc" d="M5,-5 L12,-13 L19,-5 L12,2Z"/>
+    <path class="ml" d="M-23,-15 Q-12,-24 -1,-15"/>
+    <path class="ml" d="M1,-15 Q12,-24 23,-15"/>
+    <path d="M0,4 L-3,12 L3,12Z" fill="none" stroke="#ffffff" stroke-width="1.5"/>
+    <line class="scar" x1="-26" y1="0" x2="26" y2="-2"/>
   </g>
 
   <text class="tag" x="450" y="200">BREAK · BUILD · AUDIT</text>
-
-  <text class="name" x="450" y="145">NGUYEN DINH AN NINH</text>
-  <line class="divider" x1="270" y1="165" x2="630" y2="165"/>
-  <text class="sub" x="450" y="190">OFFENSIVE SECURITY · BLOCKCHAIN AUDITING · AI ENGINEERING</text>
+  <text class="nm" x="450" y="145">NGUYEN DINH AN NINH</text>
+  <line class="dv" x1="270" y1="165" x2="630" y2="165"/>
+  <text class="sb" x="450" y="190">OFFENSIVE SECURITY · BLOCKCHAIN AUDITING · AI ENGINEERING</text>
 </svg>
