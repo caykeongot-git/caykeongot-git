@@ -3,16 +3,16 @@
     <style>
       .bg{fill:#0d1117}
       .p1{opacity:0;animation:m 14s ease infinite}
-      .mf{fill:#c9d1d9}
-      .mc{fill:#0d1117}
-      .ml{fill:none;stroke:#0d1117;stroke-width:2.5}
-      .scar{fill:none;stroke:#e94560;stroke-width:1.5;stroke-dasharray:3 2}
       .rf{fill:#e94560}
+      .eye-glow{fill:#e94560;opacity:0;animation:gw 14s ease infinite}
+      .pulse{animation:pu 2s ease-in-out infinite}
       .tag{fill:#e94560;font-family:'Segoe UI',system-ui,sans-serif;font-size:16px;font-weight:600;letter-spacing:8px;opacity:0;text-anchor:middle;animation:tg 14s ease infinite}
       .nm{fill:#e94560;font-family:'Segoe UI',system-ui,sans-serif;font-size:44px;font-weight:700;letter-spacing:6px;opacity:0;text-anchor:middle;animation:n 14s ease infinite}
       .sb{fill:#8b949e;font-family:'Segoe UI',system-ui,sans-serif;font-size:12px;font-weight:400;letter-spacing:4px;opacity:0;text-anchor:middle;animation:s 14s ease infinite}
       .dv{stroke:#e94560;stroke-width:1;opacity:0;animation:s 14s ease infinite}
       @keyframes m{0%,3%{opacity:0}8%{opacity:1}32%{opacity:1}38%{opacity:0}100%{opacity:0}}
+      @keyframes gw{0%,3%{opacity:0}6%{opacity:0}10%{opacity:.15}32%{opacity:.15}38%{opacity:0}100%{opacity:0}}
+      @keyframes pu{0%,100%{r:6}50%{r:7.5}}
       @keyframes tg{0%,14%{opacity:0}20%{opacity:1}32%{opacity:1}38%{opacity:0}100%{opacity:0}}
       @keyframes n{0%,44%{opacity:0;letter-spacing:20px}54%{opacity:1;letter-spacing:6px}82%{opacity:1}90%{opacity:0}100%{opacity:0}}
       @keyframes s{0%,56%{opacity:0}64%{opacity:1}82%{opacity:1}90%{opacity:0}100%{opacity:0}}
@@ -21,7 +21,11 @@
 
   <rect class="bg" width="900" height="300" rx="16"/>
 
-  <!-- Outer Ring: 3 blades + circle, CW 8s -->
+  <!-- Eye glow aura -->
+  <circle class="eye-glow" cx="450" cy="95" r="30" filter="url(#blur)"/>
+  <defs><filter id="blur"><feGaussianBlur stdDeviation="8"/></filter></defs>
+
+  <!-- Outer Ring: 3 blades, CW 8s -->
   <g class="p1">
     <g>
       <circle cx="450" cy="95" r="72" fill="none" stroke="#e94560" stroke-width="1" opacity="0.3"/>
@@ -32,7 +36,7 @@
     </g>
   </g>
 
-  <!-- Middle Ring: 3 tomoe + circle, CCW 6s -->
+  <!-- Middle Ring: 3 tomoe, CCW 6s -->
   <g class="p1">
     <g>
       <circle cx="450" cy="95" r="55" fill="none" stroke="#e94560" stroke-width="1" opacity="0.2"/>
@@ -61,18 +65,25 @@
     </g>
   </g>
 
-  <!-- Mask (centered at 450,95) -->
-  <g class="p1" transform="translate(450,95)">
-    <path class="mf" d="M0,-38 C22,-38 34,-26 34,-8 C34,14 20,30 0,40 C-20,30 -34,14 -34,-8 C-34,-26 -22,-38 0,-38Z"/>
-    <path class="mc" d="M-19,-5 L-12,-13 L-5,-5 L-12,2Z"/>
-    <path class="mc" d="M5,-5 L12,-13 L19,-5 L12,2Z"/>
-    <path class="ml" d="M-23,-15 Q-12,-24 -1,-15"/>
-    <path class="ml" d="M1,-15 Q12,-24 23,-15"/>
-    <path d="M0,4 L-3,12 L3,12Z" fill="none" stroke="#0d1117" stroke-width="1.5"/>
-    <line class="scar" x1="-26" y1="0" x2="26" y2="-2"/>
+  <!-- === THE EYE (Sharingan Center) === -->
+  <g class="p1">
+    <!-- Eye shape - almond -->
+    <path d="M420,95 C432,72 468,72 480,95 C468,118 432,118 420,95Z" fill="#e94560"/>
+    <!-- Iris -->
+    <circle cx="450" cy="95" r="16" fill="#200000" stroke="#e94560" stroke-width="1.5"/>
+    <!-- Iris ring detail -->
+    <circle cx="450" cy="95" r="12" fill="none" stroke="#e94560" stroke-width="0.5" opacity="0.5"/>
+    <!-- Pupil (pulsing) -->
+    <circle cx="450" cy="95" r="6" fill="#0d1117" class="pulse"/>
+    <!-- Glint -->
+    <circle cx="444" cy="89" r="2.5" fill="#ffffff" opacity="0.7"/>
+    <circle cx="447" cy="86" r="1" fill="#ffffff" opacity="0.4"/>
   </g>
 
+  <!-- Phase 1 tagline -->
   <text class="tag" x="450" y="200">BREAK · BUILD · AUDIT</text>
+
+  <!-- Phase 2: Name -->
   <text class="nm" x="450" y="145">NGUYEN DINH AN NINH</text>
   <line class="dv" x1="270" y1="165" x2="630" y2="165"/>
   <text class="sb" x="450" y="190">OFFENSIVE SECURITY · BLOCKCHAIN AUDITING · AI ENGINEERING</text>
