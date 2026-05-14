@@ -1,5 +1,7 @@
 <!-- ═══════════════════════════════════════════════════════════════ -->
 <!--                    MOSHI — GITHUB PROFILE                     -->
+<!--        © 2025 Nguyen Dinh An Ninh. All rights reserved.       -->
+<!--   Original design. Please create your own, don't copy mine.   -->
 <!-- ═══════════════════════════════════════════════════════════════ -->
 
 <div align="center">
